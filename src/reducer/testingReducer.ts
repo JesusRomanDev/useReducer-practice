@@ -6,7 +6,7 @@ type InitialState = {
     contador: number
 }
 
-type Actions = {type: 'increment'} | {type: 'decrement'} | {type: 'reset', payload: number}
+type Actions = {type: 'increment'} | {type: 'decrement'} | {type: 'reset', payload: number} | {type: 'custom', payload: number}
 
 export const contadorReduce = (state : InitialState, action: Actions ) : InitialState => {
     switch(action.type){
@@ -18,7 +18,12 @@ export const contadorReduce = (state : InitialState, action: Actions ) : Initial
 
         case 'reset':
             return {...state, contador: action.payload}
+
+        case 'custom':
+            return {...state, contador: Math.ceil(action.payload)}
+
         default:
             return state
+            
     }
 }
