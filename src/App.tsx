@@ -9,7 +9,9 @@ function App() {
     <>
       <div>
         <div>{state.contador}</div>
-        <button onClick={() => dispatch({type:'increment'})}>Dame click</button>
+        <button onClick={() => dispatch({type:'increment'})}>Dame click para + 1</button>
+        <button onClick={() => dispatch({type:'decrement'})}>Dame click para - 1</button>
+        <button onClick={() => dispatch({type: 'reset', payload: 0})}>Dame click para resetear</button>
       </div>
     </>
   )
