@@ -1,30 +1,9 @@
 # React + TypeScript + Vite
+useReducer es similar a useState, solo que este nos sirve para ocasiones mas complejas
+La funcion reducer toma 2 argumentos, el state actual y la accion, cuando se le asigna una accion ya en su funcion, reducer retornara el siguiente o nuevo valor.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El reducer siempre va a retornar un state nuevo con la informacion que recibe en sus parametros
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+La funcion reducer va a retornar un array con 2 elementos, el primero sera el state con el valor actual, el segundo una funcion 
+dispatch que la podremos usar y asignandole los argumentos que recibira nuestra funcion en cuestion
+El initialState solo nos servira para que en el primer renderizado sepa cual es el valor inicial y sobre el trabaje tambien la funcion reducer por primera vez.
