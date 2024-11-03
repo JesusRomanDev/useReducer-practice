@@ -9,6 +9,8 @@ type InitialState = {
 type Actions = {type: 'increment'} | {type: 'decrement'} | {type: 'reset', payload: number} | {type: 'custom', payload: number}
 
 export const contadorReduce = (state : InitialState, action: Actions ) : InitialState => {
+      // eslint-disable-next-line no-debugger
+    debugger
     switch(action.type){
         case 'increment':
             return {...state, contador: state.contador + 1}
